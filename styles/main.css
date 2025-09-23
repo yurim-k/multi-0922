@@ -1,12 +1,17 @@
+/* 사용자 정의 속성 - CSS 변수(Variable) */
+:root {
+  --primary: #d16527;
+  --secondary: #edad2d;
+}
+
 /* 영역 별 색상 및 높이 */
 .container {
   /* background-color: azure; */
 }
 
 .header {
-  position: relative;
-  background-color: #ffffff;
-  border-radius: 0 0 15px 15px;
+  background-color: pink;
+  /* height: 10vh; */
 }
 
 .visual {
@@ -99,17 +104,79 @@
   }
 }
 
+/* 헤더 */
+.header {
+  position: relative;
+  background-color: #fff;
+  border-radius: 0 0 15px 15px;
+  padding: 0 30px;
+}
+
 /* 로고 */
+/* postion 레이아웃 */
 .logo {
   position: absolute;
-  top: 64px;
+  top: 54px;
   left: 48px;
 }
 
 /* 유틸리티 메뉴 */
 .utility-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  padding: 4px 0;
+  gap: 8px;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+  left: 8px;
+
+  li {
+    display: contents;
+
+    a {
+      padding: 4px 8px;
+      text-transform: uppercase;
+    }
+  }
 }
 
 /* 내비게이션 */
 .navigation {
+  background-color: yellow;
+  padding-block-end: 100px;
+}
+
+/* 메인 메뉴 */
+.menu {
+  /* background-color: var(--primary);
+  background-image: linear-gradient(to bottom, var(--secondary) 0%, var(--primary) 20%, var(--primary) 80%, var(--secondary) 100%); */
+  list-style: none;
+  padding-inline-start: 0;
+  background: var(--primary) linear-gradient(to bottom, var(--secondary) 0%, var(--primary) 20%, var(--primary) 80%, var(--secondary) 100%);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: end;
+  border-block-start: 2px solid #000;
+
+  .menu-item {
+    border-left: 2px solid #fff;
+  }
+
+  .menu-button {
+    border: 0;
+    padding: 8px 20px;
+    background: transparent;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+  }
+
+  .sub-menu {
+    background: pink;
+    position: absolute;
+    display: none;
+  }
 }
