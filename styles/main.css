@@ -1,6 +1,6 @@
 /* 영역 별 색상 */
 .container {
-  background-color: azure;
+  /* background-color: azure; */
 }
 
 .header {
@@ -60,19 +60,21 @@
 .main {
   display: flex;
   flex-flow: row nowrap;
-  padding-block: 28px 16px;
-  padding-inline: 16px;
-  justify-content: space-between;
-}
+  justify-content: space-evenly;
+  padding-block: 30px;
+  align-items: stretch;
+  background-color: #fff;
+  border-radius: 15px 15px 0 0;
 
-.group1 {
-  width: 250px;
-}
+  .group1 {
+    width: 250px;
+  }
 
-.group2 {
-  width: 380px;
-}
+  .group2 {
+    width: 380px;
+  }
 
-.group3 {
-  width: 190px;
+  .group3 {
+    width: 590px;
+  }
 }
