@@ -51,7 +51,10 @@
 .slogan,
 .footer {
   width: 940px;
+  inline-size: 940px;
   margin-inline: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .main {
