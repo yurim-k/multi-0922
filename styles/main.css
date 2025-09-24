@@ -118,6 +118,7 @@
   position: absolute;
   top: 54px;
   left: 48px;
+  z-index: 10;
 }
 
 /* 유틸리티 메뉴 */
@@ -144,12 +145,14 @@
 
 /* 내비게이션 */
 .navigation {
-  background-color: yellow;
-  padding-block-end: 100px;
+  padding-block-end: 40px;
 }
 
 /* 메인 메뉴 */
 .menu {
+  --spacing-base: 16px;
+  --spacing-lg: 20px;
+
   /* background-color: var(--primary);
   background-image: linear-gradient(to bottom, var(--secondary) 0%, var(--primary) 20%, var(--primary) 80%, var(--secondary) 100%); */
   list-style: none;
@@ -159,13 +162,14 @@
   flex-flow: row nowrap;
   justify-content: end;
   border-block-start: 2px solid #000;
+  position: relative;
 
   .menu-item {
     border-left: 2px solid #fff;
 
     .menu-button {
       border: 0;
-      padding: 16px 20px;
+      padding: var(--spacing-base) var(--spacing-lg);
       background: transparent;
       font-size: 18px;
       color: #fff;
@@ -174,23 +178,56 @@
     }
   }
 
-  .is-active {
-    .menu-button {
-      color: yellow !important;
-    }
+  .sub-menu {
+    position: absolute;
+    list-style: none;
+    padding: 4px 0;
+    padding-inline-start: 0;
+    display: none;
+    gap: var(--spacing-base);
 
-    &::before {
-      content: "멀티";
-    }
+    a {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 0;
 
-    &::after {
-      content: "캠퍼스";
+      &:focus-visible {
+        box-shadow: none;
+      }
     }
   }
 
-  .sub-menu {
-    background: pink;
-    position: absolute;
-    display: none;
+  .is-active {
+    .menu-button {
+      color: #ff0 !important;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: calc(100% - (var(--spacing-lg) * 2));
+        background: #000;
+        position: absolute;
+        bottom: -2px;
+      }
+    }
+
+    .sub-menu {
+      display: flex;
+    }
+  }
+
+  .menu-button:focus-visible {
+    color: #ccc !important;
+    box-shadow: none;
+  }
+
+  .menu-archive,
+  .menu-qna,
+  .menu-accessibility {
+    right: 0;
   }
 }
