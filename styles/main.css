@@ -20,8 +20,8 @@
 }
 
 .main {
-  background-color: green;
-  height: 60vh;
+  /* background-color: green; */
+  /* height: 60vh; */
 }
 
 .group1 {
@@ -29,7 +29,7 @@
 }
 
 .group2 {
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 .group3 {
@@ -352,21 +352,12 @@
     }
 
     input {
-      border: 1px solid #aaa;
-      border-radius: 3px;
       flex: 1 1 0;
-      min-width: 0;
-      padding: 2px 2px 2px 8px;
-      font-size: 0.8125rem;
     }
 
     button {
       width: 50px;
       aspect-ratio: 1/1;
-      border: 0;
-      padding: 0;
-      background: var(--primary);
-      color: #fff;
       border-radius: 5px;
       position: absolute;
       right: 0;
@@ -405,6 +396,10 @@
     border: 1px solid #aaa;
     padding: 8px 20px 8px 36px;
     border-radius: 37px;
+    /* 높이를 고정 값으로 사용할 경우 */
+    /* height: 37px; */
+    /* line-height: 37px; */
+    /* align-content: center; */
 
     &:hover,
     &:focus {
@@ -419,33 +414,9 @@
 
 /* 웹 관련 용어 */
 .term {
-  background: #ccc linear-gradient(to bottom, #aaa, #ccc, #eee);
-  border: 1px solid #aaa;
   padding: 16px;
   border-radius: 5px;
   line-height: 1.5;
-
-  .term-item:nth-of-type(odd) {
-    background-color: pink !important;
-    padding-left: 76px;
-
-    .term-thumbnail {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-
-  .term-item:nth-of-type(even) {
-    background-color: lime !important;
-    padding-right: 76px;
-
-    .term-thumbnail {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-  }
 
   .term-title {
     font-size: 0.9375rem;
@@ -453,14 +424,60 @@
   }
 
   .term-item {
-    background-color: yellow;
     margin-top: 12px;
-    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 4px 16px;
+
+    .term-subject {
+      grid-column: span 2;
+    }
+
+    .term-description {
+      grid-column: span 2;
+    }
+
+    .term-thumbnail {
+      grid-row: 1 / span 2;
+    }
+  }
+
+  .term-item:nth-of-type(even) {
+    .term-thumbnail {
+      grid-column: 3;
+    }
   }
 
   .term-subject {
     color: #296798;
     font-size: 0.875rem;
     font-weight: 600;
+  }
+}
+
+/* 검색 폼 */
+.search {
+  padding: 12px 24px 8px;
+  border-radius: 5px 5px 0 0;
+
+  .search-form {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+    align-items: center;
+
+    .form-input {
+      display: contents;
+    }
+
+    label,
+    button {
+      flex: 0 0 max-content;
+    }
+
+    input {
+      flex: 1 1 auto;
+      align-self: stretch;
+    }
   }
 }
