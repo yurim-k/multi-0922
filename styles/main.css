@@ -25,7 +25,7 @@
 }
 
 .group1 {
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 .group2 {
@@ -269,10 +269,11 @@
     top: 0;
     left: 0;
     z-index: -1;
-    animation-name: fade;
+    /* animation-name: fade;
     animation-duration: 2000ms;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-direction: alternate; */
+    animation: fade 2000ms infinite alternate;
   }
 
   &::before {
@@ -290,9 +291,128 @@
 
   p {
     font-family: Georgia, "Times New Roman", Times, serif;
-    animation-name: move;
+    display: inline-flex;
+    /* animation-name: move;
     animation-duration: 2000ms;
-    animation-fill-mode: forwards;
-    display: inline-block;
+    animation-fill-mode: forwards; */
+    animation: move 2000ms forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visual {
+    &::before,
+    &::after,
+    p {
+      animation: none;
+    }
+
+    p {
+      translate: 400px 75px;
+      font-size: 24px;
+    }
+  }
+}
+
+/* 로그인 */
+.login {
+  background: var(--primary) radial-gradient(circle at right top, var(--secondary), var(--primary));
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 0 #aaa;
+  padding: 15px;
+
+  h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ff0;
+  }
+
+  .form-wrapper {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  form {
+    position: relative;
+    padding-bottom: 5px;
+
+    .form-input {
+      width: calc(100% - 58px);
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    label {
+      flex: 0 0 4em;
+      /* white-space: nowrap; */
+    }
+
+    input {
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      flex: 1 1 0;
+      min-width: 0;
+      padding: 2px 2px 2px 8px;
+      font-size: 0.8125rem;
+    }
+
+    button {
+      width: 50px;
+      aspect-ratio: 1/1;
+      border: 0;
+      padding: 0;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 5px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    padding-left: 0;
+    justify-content: space-between;
+    border-top: 1px solid #aaa;
+    padding-top: 10px;
+
+    span {
+      color: var(--primary);
+    }
+  }
+}
+
+/* 유효성 검사 배너 */
+.validation {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-block: 16px;
+  }
+
+  a {
+    background: url("./../assets/validation_icon.png") no-repeat 16px 50%, linear-gradient(to bottom, #aaa, #ccc, #eee) #ccc;
+    border: 1px solid #aaa;
+    padding: 8px 20px 8px 36px;
+    border-radius: 37px;
+
+    &:hover,
+    &:focus {
+      color: #f00;
+    }
+
+    &:focus-visible {
+      box-shadow: none;
+    }
   }
 }
