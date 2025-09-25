@@ -475,9 +475,29 @@
       flex: 0 0 max-content;
     }
 
+    label {
+      display: flex;
+      align-items: center;
+
+      svg {
+        display: inline-block;
+      }
+    }
+
     input {
       flex: 1 1 auto;
       align-self: stretch;
     }
+  }
+}
+
+/* 공지사항 및 자료실 */
+.board {
+  background: yellow;
+  margin-top: 28px;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
   }
 }

@@ -193,11 +193,78 @@
             <h2 class="sr-only">검색</h2>
             <form action="/" class="search-form" method="post">
               <div class="form-input">
-                <label for="keyword"><span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span>자료검색</label>
+                <label for="keyword">
+                  <!-- <span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span> -->
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M11.1457 12.56C10.452 12.9971 9.63054 13.25 8.75 13.25C6.26472 13.25 4.25 11.2353 4.25 8.75C4.25 6.26472 6.26472 4.25 8.75 4.25C11.2353 4.25 13.25 6.26472 13.25 8.75C13.25 9.63054 12.9971 10.452 12.56 11.1457L15.4571 14.0429C15.8476 14.4334 15.8476 15.0666 15.4571 15.4571C15.0666 15.8476 14.4334 15.8476 14.0429 15.4571L11.1457 12.56ZM11.25 8.75C11.25 10.1307 10.1307 11.25 8.75 11.25C7.36929 11.25 6.25 10.1307 6.25 8.75C6.25 7.36929 7.36929 6.25 8.75 6.25C10.1307 6.25 11.25 7.36929 11.25 8.75Z"
+                      fill="#181818"
+                    />
+                  </svg>
+                  자료검색</label
+                >
                 <input class="input" type="search" id="keyword" name="searchKeyword" required placeholder="검색어를 입력하세요." />
               </div>
               <button type="submit" class="button button-fill">검색</button>
             </form>
+          </div>
+          <div class="board">
+            <ul class="tab-list" role="tablist">
+              <li tabindex="0" role="tab" aria-controls="panel-1" id="tab-1" aria-selected="true">공지사항</li>
+              <li tabindex="0" role="tab" aria-controls="panel-2" id="tab-2" aria-selected="false">자료실</li>
+            </ul>
+            <div class="panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+              <ul class="notice-list board-panel">
+                <li>
+                  <a href="/"><span aria-hidden="true" class="fa-regular fa-circle-dot"></span>HTML의 모든 것을 알려주마 샘플 활용법</a>
+                  <time datetime="2025-09-25T16:28:30">2025.09.25</time>
+                </li>
+                <li>
+                  <a href="/"><span aria-hidden="true" class="fa-regular fa-circle-dot"></span>W3C 사이트 리뉴얼 및 공지사항</a>
+                  <time datetime="2025-09-25T16:28:30">2025.09.25</time>
+                </li>
+                <li>
+                  <a href="/"><span aria-hidden="true" class="fa-regular fa-circle-dot"></span>KWCAG 2.1 소식</a>
+                  <time datetime="2025-09-25T16:28:30">2025.09.25</time>
+                </li>
+                <li>
+                  <a href="/"><span aria-hidden="true" class="fa-regular fa-circle-dot"></span>서버 점검으로 인한 사이트 이용안내 입니다.</a>
+                  <time datetime="2025-09-25T16:28:30">2025.09.25</time>
+                </li>
+                <li>
+                  <a href="/"><span aria-hidden="true" class="fa-regular fa-circle-dot"></span>여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
+                  <time datetime="2025-09-25T16:28:30">2025.09.25</time>
+                </li>
+              </ul>
+              <a href="/" title="공지사항"><span class="fa-solid fa-plus" aria-hidden="true"></span>더보기</a>
+            </div>
+            <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+              <ul class="archive-list board-panel">
+                <li>
+                  <a href="/"><span aria-hidden="true" class="fa-regular fa-circle-dot"></span>디자인 사이트 링크 모음</a>
+                  <time datetime="2025-09-25T16:28:30">2025.09.25</time>
+                </li>
+                <li>
+                  <a href="/"><span aria-hidden="true" class="fa-regular fa-circle-dot"></span>웹 접근성 관련 자료 모음</a>
+                  <time datetime="2025-09-25T16:28:30">2025.09.25</time>
+                </li>
+                <li>
+                  <a href="/"><span aria-hidden="true" class="fa-regular fa-circle-dot"></span>예제 샘플 응용해보기</a>
+                  <time datetime="2025-09-25T16:28:30">2025.09.25</time>
+                </li>
+                <li>
+                  <a href="/"><span aria-hidden="true" class="fa-regular fa-circle-dot"></span>웹 접근성 향상을위한 국가 표준 기술 가이드라인</a>
+                  <time datetime="2025-09-25T16:28:30">2025.09.25</time>
+                </li>
+                <li>
+                  <a href="/"><span aria-hidden="true" class="fa-regular fa-circle-dot"></span>로얄티 프리 이미지 자료</a>
+                  <time datetime="2025-09-25T16:28:30">2025.09.25</time>
+                </li>
+              </ul>
+              <a href="/" title="자료실"><span class="fa-solid fa-plus" aria-hidden="true"></span>더보기</a>
+            </div>
           </div>
         </div>
         <div class="group group3">그룹3</div>
